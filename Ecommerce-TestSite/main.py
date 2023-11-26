@@ -8,3 +8,12 @@ r=requests.get(url)
 
 soup=BeautifulSoup(r.content, "html.parser")
 # print(soup.prettify())
+
+# boxes=soup.find_all("div",class_="col-md-4 col-xl-4 col-lg-4")
+# print(boxes)
+
+names = soup.find_all("a",class_="title")
+# print(names)
+
+for name in names:
+    print(name.text)
